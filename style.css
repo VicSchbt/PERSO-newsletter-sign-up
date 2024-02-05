@@ -24,13 +24,24 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.subscribe-modal {
+.subscribe-modal,
+.success-modal {
   background-color: var(--white);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
   border-radius: 32px;
+  gap: 20px;
+}
+
+.subscribe-modal {
+  padding: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.success-modal {
+  width: 30%;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .subscribe-modal-form {
