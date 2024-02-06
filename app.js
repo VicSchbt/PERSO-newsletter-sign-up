@@ -2,6 +2,7 @@ const subscribeModal = document.getElementsByClassName("subscribe-modal")[0];
 const successModal = document.getElementsByClassName("success-modal")[0];
 
 const emailInput = document.getElementById("emailAddr");
+const emailDisplay = document.getElementById("email-addr");
 
 const submitBtn = document.getElementById("submit-btn");
 const dismissBtn = document.getElementById("dismiss-btn");
@@ -15,6 +16,8 @@ const isEmailAddr = (text) => {
 const onSubmitClicked = (e) => {
   e.preventDefault();
   if (isEmailAddr(emailInput.value)) {
+    emailDisplay.innerText = emailInput.value;
+    emailInput.value = "";
     subscribeModal.classList.add("hide");
     successModal.classList.remove("hide");
   } else {

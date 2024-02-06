@@ -25,18 +25,24 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.mobile {
+  display: none;
+}
+
 .subscribe-modal,
 .success-modal {
   background-color: var(--white);
   border-radius: 32px;
   display: flex;
   gap: 20px;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 .subscribe-modal {
+  width: 70%;
   padding: 20px;
   align-items: center;
-  display: flex;
 }
 
 .success-modal {
@@ -63,6 +69,8 @@ body {
 }
 
 h1 {
+  font-size: 44px;
+  line-height: 52px;
   font-weight: 700;
 }
 
@@ -75,7 +83,7 @@ ul {
 li {
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
@@ -100,6 +108,11 @@ input {
   padding: 16px;
   border: 1px solid var(--grey);
   border-radius: 8px;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 1px solid var(--dark-slate-grey);
 }
 
 button {
@@ -109,6 +122,18 @@ button {
   background-color: var(--dark-slate-grey);
   border-radius: 8px;
   font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(255, 98, 87);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 98, 87, 1) 40%,
+    rgba(255, 173, 0, 1) 100%
+  );
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(255, 98, 87, 0.7);
+  box-shadow: 0px 10px 20px 0px rgba(255, 98, 87, 0.7);
 }
 
 .hide {
@@ -130,9 +155,33 @@ button {
 }
 
 @media only screen and (max-width: 400px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .subscribe-modal {
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    padding: 0;
+    justify-content: flex-end;
+  }
+  .subscribe-modal-form {
+    justify-content: space-between;
+  }
+
   .success-modal {
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+
+  .subscribe-modal-img,
+  .subscribe-modal-img img {
+    width: 100%;
   }
 }
