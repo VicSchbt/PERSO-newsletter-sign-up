@@ -4,8 +4,12 @@ const successModal = document.getElementsByClassName("success-modal")[0];
 const emailInput = document.getElementById("emailAddr");
 const emailDisplay = document.getElementById("email-addr");
 
+const errorMessage = document.getElementById("error-message");
+
 const submitBtn = document.getElementById("submit-btn");
 const dismissBtn = document.getElementById("dismiss-btn");
+
+let wrongFormat = false;
 
 const isEmailAddr = (text) => {
   const re =
@@ -21,7 +25,9 @@ const onSubmitClicked = (e) => {
     subscribeModal.classList.add("hide");
     successModal.classList.remove("hide");
   } else {
-    console.log("NOT EMAIL PATTERN");
+    wrongFormat = true;
+    emailInput.classList.add("wrong-format");
+    errorMessage.classList.remove("hide");
   }
 };
 
@@ -31,5 +37,15 @@ const onDismissClicked = (e) => {
   successModal.classList.add("hide");
 };
 
+const onChanged = (e) => {
+  e.preventDefault();
+  if (wrongFormat && isEmailAddr(e.target.value)) {
+    wrongFormat = false;
+    emailInput.classList.remove("wrong-format");
+    errorMessage.classList.add("hide");
+  }
+};
+
 submitBtn.addEventListener("click", onSubmitClicked);
 dismissBtn.addEventListener("click", onDismissClicked);
+emailInput.addEventListener("change", onChanged);

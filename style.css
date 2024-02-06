@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-  --tomato: hsl(4, 100%, 67%);
-  --dark-slate-grey: hsl(234, 29%, 20%);
-  --charcoal-grey: hsl(235, 18%, 26%);
-  --grey: hsl(231, 7%, 60%);
-  --white: hsl(0, 0%, 100%);
+  --tomato: #ff6257;
+  --tomato-light: #ff625728;
+  --dark-slate-grey: #242742;
+  --charcoal-grey: #36384e;
+  --grey: #9294a0;
+  --white: #fff;
 }
 
 *,
@@ -83,7 +84,7 @@ ul {
 li {
   list-style: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
 }
 
@@ -96,12 +97,17 @@ form {
 label {
   font-weight: 700;
   font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+label span {
+  color: var(--tomato);
 }
 
 .form-element {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 input {
@@ -113,6 +119,16 @@ input {
 
 input:focus {
   outline: 1px solid var(--dark-slate-grey);
+}
+
+.wrong-format {
+  border: 1px solid var(--tomato);
+  color: var(--tomato);
+  background-color: var(--tomato-light);
+}
+
+.wrong-format::placeholder {
+  color: var(--tomato);
 }
 
 button {
@@ -183,5 +199,9 @@ button:hover {
   .subscribe-modal-img,
   .subscribe-modal-img img {
     width: 100%;
+  }
+
+  li {
+    align-items: flex-start;
   }
 }
