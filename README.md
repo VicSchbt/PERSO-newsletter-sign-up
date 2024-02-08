@@ -44,8 +44,8 @@ Users should be able to:
 
 _WIP_
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [link](https://www.frontendmentor.io/solutions/newsletter-signup-form-with-success-message-solution-vanilla-web-de-kWWpM2A-xQ)
+- Live Site URL: [link](https://vicschbt.github.io/PERSO-newsletter-sign-up/)
 
 ## My process
 
