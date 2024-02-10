@@ -22,7 +22,15 @@
 			Frontend Mentor | Newsletter sign-up form with success message
 		</title>
 	</head>
-	<body>
+	<body data-theme="light">
+		<label class="switch desktop">
+			<input
+				id="theme-toggle"
+				type="checkbox"
+			/>
+			<span class="slider round"></span>
+		</label>
+
 		<main class="subscribe-modal">
 			<section class="subscribe-modal-form">
 				<h1>Stay updated!</h1>
@@ -88,7 +96,7 @@
 			</section>
 		</main>
 
-		<main class="success-modal hide">
+		<div class="success-modal hide">
 			<section class="success-modal-text">
 				<img
 					src="./assets/images/icon-success.svg"
@@ -102,7 +110,7 @@
 				</p>
 			</section>
 			<button id="dismiss-btn">Dismiss message</button>
-		</main>
+		</div>
 
 		<footer class="attribution hide">
 			Challenge by
