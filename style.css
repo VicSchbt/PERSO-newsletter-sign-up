@@ -11,6 +11,8 @@
 	--text-content-on-light: #242742;
 	--text-content-on-dark: #fff;
 	--surface-dark: #242742;
+	--shaking-offset-neg: -3px;
+	--shaking-offset: 3px;
 }
 
 [data-theme='dark'] {
@@ -26,6 +28,42 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
+	10% {
+		transform: translateX(var(--shaking-offset));
+	}
+	20% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
+	30% {
+		transform: translateX(var(--shaking-offset));
+	}
+	40% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
+	50% {
+		transform: translateX(var(--shaking-offset));
+	}
+	60% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
+	70% {
+		transform: translateX(var(--shaking-offset));
+	}
+	80% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
+	90% {
+		transform: translateX(var(--shaking-offset));
+	}
+	100% {
+		transform: translateX(var(--shaking-offset-neg));
+	}
 }
 
 body {
@@ -148,6 +186,10 @@ input:focus {
 
 .wrong-format::placeholder {
 	color: var(--tomato);
+}
+
+.wrong-format-animation {
+	animation: shake 0.5s;
 }
 
 button {

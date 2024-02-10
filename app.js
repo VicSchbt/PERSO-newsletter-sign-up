@@ -23,6 +23,7 @@ const isEmailAddr = (text) => {
 const onSubmitClicked = (e) => {
 	e.preventDefault();
 	if (isEmailAddr(emailInput.value)) {
+		emailInput.classList.remove('wrong-format-animation');
 		emailDisplay.innerText = emailInput.value;
 		emailInput.value = '';
 		subscribeModal.classList.add('hide');
@@ -30,6 +31,7 @@ const onSubmitClicked = (e) => {
 	} else {
 		wrongFormat = true;
 		emailInput.classList.add('wrong-format');
+		emailInput.classList.add('wrong-format-animation');
 		errorMessage.classList.remove('hide');
 	}
 };
